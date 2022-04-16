@@ -14,4 +14,8 @@ public class DashboardController {
     	Main main = new Main();
     	main.changeScene("StaffClient.fxml");
     }
+    @FXML protected void handleVehicleButtonAction(ActionEvent event) throws IOException {
+    	Main main = new Main();
+    	main.changeScene("Vehicle.fxml");
+    }
 }
