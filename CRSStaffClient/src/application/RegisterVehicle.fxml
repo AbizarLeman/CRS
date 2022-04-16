@@ -7,11 +7,8 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-car adding new car
-car list
 
-
-<VBox xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.AddCarController">
+<VBox xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.AddVehicleController">
 	<padding><Insets top="25" right="25" bottom="25" left="25"/></padding>
 	
     <Text text="Register a new car" GridPane.columnIndex="0" GridPane.rowIndex="0" GridPane.columnSpan="2"/>
@@ -25,7 +22,7 @@ car list
     
     <Label text="Model" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
     <PasswordField fx:id="model" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
-	
+	 
 	<Label text="Color" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
     <PasswordField fx:id="color" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
     

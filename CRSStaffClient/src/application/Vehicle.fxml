@@ -7,12 +7,12 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 	
-<VBox xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.CustomerController">
+<VBox xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.VehicleController">
 	<padding><Insets top="25" right="25" bottom="25" left="25"/></padding>
-    <Text text="Customer" GridPane.columnIndex="0" GridPane.rowIndex="0" GridPane.columnSpan="2"/>
+    <Text text="Vehicle" GridPane.columnIndex="0" GridPane.rowIndex="0" GridPane.columnSpan="2"/>
 	<VBox spacing="10" alignment="bottom_right" GridPane.columnIndex="1" GridPane.rowIndex="4">
-		<Button text="Register a Vehicle" onAction="#handleRegisterCustomerButtonAction" />
-		<Button text="View Vehicle List" onAction="#handleViewCustomerListButtonAction" />
+		<Button text="Register Vehicle" onAction="#handleRegisterVehicleButtonAction" />
+		<Button text="View Vehicle List" onAction="#handleViewVehicleListButtonAction" />
 		<Button text="Back" onAction="#handleBackButtonAction" />
 	</VBox>
 </VBox>
