@@ -12,7 +12,7 @@
     <Text text="Vehicle" GridPane.columnIndex="0" GridPane.rowIndex="0" GridPane.columnSpan="2"/>
 	<VBox spacing="10" alignment="bottom_right" GridPane.columnIndex="1" GridPane.rowIndex="4">
 		<Button text="Register Vehicle" onAction="#handleRegisterVehicleButtonAction" />
-		<Button text="View Vehicle List" onAction="#handleViewVehicleListButtonAction" />
+        <Button text="View Vehicle List" onAction= "#handleVehicleListButtonAction" />
 		<Button text="Back" onAction="#handleBackButtonAction" />
 	</VBox>
 </VBox>

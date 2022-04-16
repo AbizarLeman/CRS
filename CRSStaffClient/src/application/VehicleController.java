@@ -17,5 +17,15 @@ public class VehicleController {
     	Main main = new Main();
     	main.changeScene("RegisterVehicle.fxml");
     }
+    
+    @FXML protected void handleVehicleListButtonAction(ActionEvent event) throws IOException {
+    	Main main = new Main();
+    	main.changeScene("VehicleList.fxml");
+    }	
+
+    @FXML protected void handleBackButtonAction(ActionEvent event) throws IOException {
+    	Main main = new Main();
+    	main.changeScene("Dashboard.fxml");
+    }
 }
     
