@@ -2,6 +2,7 @@ package application;
 import java.io.IOException;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
+import java.util.ArrayList;
 import java.util.List;
 
 import javafx.event.ActionEvent;
@@ -19,26 +20,8 @@ public class CustomerController {
     }
     
     @FXML protected void handleViewCustomerListButtonAction(ActionEvent event) throws IOException {
-        try {
-        	Registry registry = LocateRegistry.getRegistry("127.0.0.1", 1234);
-        	CustomerInterface customer = (CustomerInterface) registry.lookup("customer");
-        	System.out.println("Connected to RMI server");
-        	List<CustomerEntity> resultList = customer.getCustomers();
-        	
-        	
-            FXMLLoader loader = FXMLLoader.load(getClass().getResource("CustomerList.fxml"));
-            CustomerListController customerListController = new CustomerListController(resultList);
-            loader.setController(customerListController);
-            
-            Parent root = loader.load();
-            Scene scene = new Scene(root);
-            Node node = (Node) event.getSource();
-            Stage stage = (Stage) node.getScene().getWindow();
-            stage.setScene(scene);
-            stage.show();
-        } catch(Exception e) {
-            System.out.printf(e.toString());
-        }
+    	Main main = new Main();
+    	main.changeScene("CustomerList.fxml");
     }
     
     @FXML protected void handleBackButtonAction(ActionEvent event) throws IOException {

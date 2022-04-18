@@ -4,5 +4,5 @@ module CRSStaffClient {
 	requires javafx.graphics;
 	requires java.rmi;
 	
-	opens application to javafx.graphics, javafx.fxml;
+	opens application to javafx.graphics, javafx.fxml, javafx.base;
 }

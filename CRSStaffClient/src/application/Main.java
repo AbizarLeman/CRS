@@ -35,6 +35,10 @@ public class Main extends Application {
         Parent box = FXMLLoader.load(getClass().getResource(fxml));
         stage.getScene().setRoot(box);
     }
+    
+    public Stage getStage() throws IOException {
+        return stage;
+    }
 	
 	public static void main(String[] args) {
 		launch(args);

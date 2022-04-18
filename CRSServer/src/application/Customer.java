@@ -26,16 +26,15 @@ public class Customer extends UnicastRemoteObject implements CustomerInterface {
         	Connection connection = dataSource.getConnection();
         	PreparedStatement statement = connection.prepareStatement(sql);
         	
-        	statement.setString(1, customerEntity.email);
-        	statement.setString(2, customerEntity.password);
-        	statement.setString(3, customerEntity.fullname);
-        	statement.setDouble(4, customerEntity.balance);
-        	statement.setBoolean(5, customerEntity.isRenting);
+        	statement.setString(1, customerEntity.getEmail());
+        	statement.setString(2, customerEntity.getPassword());
+        	statement.setString(3, customerEntity.getFullname());
+        	statement.setDouble(4, customerEntity.getBalance());
+        	statement.setBoolean(5, customerEntity.getIsRenting());
         	
         	return statement.executeUpdate();
 		} catch (Exception e) {
             e.printStackTrace();
-            System.exit(0);
 			return 0;
 		}
 	}
@@ -52,12 +51,12 @@ public class Customer extends UnicastRemoteObject implements CustomerInterface {
         	
         	while (result.next()) {
         		CustomerEntity customerEntity = new CustomerEntity();
-        		customerEntity.id = result.getInt("id");
-        		customerEntity.email = result.getString("email");
-        		customerEntity.password = result.getString("password");
-        		customerEntity.fullname = result.getString("fullname");
-        		customerEntity.balance  = result.getFloat("balance");
-        		customerEntity.isRenting = result.getBoolean("is_renting");
+        		customerEntity.setId(result.getInt("id"));
+        		customerEntity.setEmail(result.getString("email"));
+        		customerEntity.setPassword(result.getString("password"));
+        		customerEntity.setFullname(result.getString("fullname"));
+        		customerEntity.setBalance(result.getFloat("balance"));
+        		customerEntity.setIsRenting(result.getBoolean("is_renting"));
 	            resultList.add(customerEntity);
         	}
 	         
@@ -67,7 +66,6 @@ public class Customer extends UnicastRemoteObject implements CustomerInterface {
         	return resultList;
         } catch (Exception e) {
             e.printStackTrace();
-            System.exit(0);
     		return null;
         }
     }
@@ -83,18 +81,17 @@ public class Customer extends UnicastRemoteObject implements CustomerInterface {
         	CustomerEntity customerEntity = new CustomerEntity();
         	
         	while (result.next()) {
-        		customerEntity.id = result.getInt("id");
-        		customerEntity.email = result.getString("email");
-        		customerEntity.password = result.getString("password");
-        		customerEntity.fullname = result.getString("fullname");
-        		customerEntity.balance  = result.getFloat("balance");
-        		customerEntity.isRenting = result.getBoolean("is_renting");
+        		customerEntity.setId(result.getInt("id"));
+        		customerEntity.setEmail(result.getString("email"));
+        		customerEntity.setPassword(result.getString("password"));
+        		customerEntity.setFullname(result.getString("fullname"));
+        		customerEntity.setBalance(result.getFloat("balance"));
+        		customerEntity.setIsRenting(result.getBoolean("is_renting"));
         	}
         	
         	return customerEntity;
 		} catch (Exception e) {
             e.printStackTrace();
-            System.exit(0);
     		return null;
 		}	
 	}
@@ -108,17 +105,16 @@ public class Customer extends UnicastRemoteObject implements CustomerInterface {
         	Connection connection = dataSource.getConnection();
         	PreparedStatement statement = connection.prepareStatement(sql);
         	
-        	statement.setString(1, customerEntity.email);
-        	statement.setString(2, customerEntity.password);
-        	statement.setString(3, customerEntity.fullname);
-        	statement.setDouble(4, customerEntity.balance);
-        	statement.setBoolean(5, customerEntity.isRenting);
-        	statement.setInt(6, customerEntity.id);
+        	statement.setString(1, customerEntity.getEmail());
+        	statement.setString(2, customerEntity.getPassword());
+        	statement.setString(3, customerEntity.getFullname());
+        	statement.setDouble(4, customerEntity.getBalance());
+        	statement.setBoolean(5, customerEntity.getIsRenting());
+        	statement.setInt(6, customerEntity.getId());
         	
         	return statement.executeUpdate();
 		} catch (Exception e) {
             e.printStackTrace();
-            System.exit(0);
     		return 0;
 		}	
 	}
@@ -135,7 +131,6 @@ public class Customer extends UnicastRemoteObject implements CustomerInterface {
         	return statement.executeUpdate();
 		} catch (Exception e) {
             e.printStackTrace();
-            System.exit(0);
     		return 0;
 		}	
 	}
