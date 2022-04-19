@@ -33,7 +33,7 @@ public class EditVehicleController {
 	
 	public void setEntity(VehicleEntity vehicleEntity) {
 		this.vehicleEntity = vehicleEntity;
-	    year.setText(vehicleEntity.getYear());
+	    year.setText(String.valueOf(vehicleEntity.getYear()));
 	    make.setText(vehicleEntity.getMake());
 	    model.setText(vehicleEntity.getModel());
 	    color.setText(vehicleEntity.getColor());
@@ -45,12 +45,12 @@ public class EditVehicleController {
         	VehicleInterface vehicle = (VehicleInterface) registry.lookup("vehicle");
         	System.out.println("Connected to RMI server");
         	
-        	vehicleEntity.setYear(Year.getText());
-        	vehicleEntity.setMake(Make.getText());
-        	vehicleEntity.setModel(Model.getText());
-        	vehicleEntity.setColor(Color.getText());
+        	vehicleEntity.setYear(year.getText(Integer.valueOf(setYear));
+        	vehicleEntity.setMake(make.getText());
+        	vehicleEntity.setModel(model.getText());
+        	vehicleEntity.setColor(color.getText());
         	
-        	int updateResult = vehicle.updateCustomer(vehicleEntity);
+        	int updateResult = vehicle.updateVehicle(vehicleEntity);
         	
         	if (updateResult == 0) {
         		errorMessage.setText("Failed to update!");
