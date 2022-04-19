@@ -3,7 +3,7 @@
 BEGIN TRANSACTION;
 CREATE TABLE customer ( id INTEGER PRIMARY KEY, email TEXT, password TEXT, fullname TEXT, balance REAL, is_renting INTEGER);
 CREATE TABLE staff ( id INTEGER PRIMARY KEY, email TEXT, password TEXT, fullname TEXT);
-CREATE TABLE vehicle (id INTEGER PRIMARY KEY, year INTEGER, make TEXT, model TEXT, color TEXT, current_customer_id INTEGER);
+CREATE TABLE vehicle (id INTEGER PRIMARY KEY, year INTEGER, year INTEGER, make TEXT, model TEXT, color TEXT, current_customer_id INTEGER);
 CREATE TABLE rental ( id INTEGER PRIMARY KEY, customer_id INTEGER, car_id INTEGER, start_date TEXT, end_date TEXT, status TEXT);
 CREATE TABLE bill ( id INTEGER PRIMARY KEY, issued_on TEXT, due_date TEXT, amount REAL, status TEXT);
 CREATE TABLE payment ( id INTEGER PRIMARY KEY, bill_id INTEGER, payment_date TEXT, amount REAL);

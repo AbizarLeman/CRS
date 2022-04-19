@@ -31,8 +31,6 @@ public class VehicleListController implements Initializable {
     @FXML
     private TableView<VehicleEntity> table;
     @FXML
-    private TableColumn<VehicleEntity, Integer> currentCustomerId;
-    @FXML
     private TableColumn<VehicleEntity, Integer> year;
     @FXML
     private TableColumn<VehicleEntity, String> make;
@@ -41,14 +39,16 @@ public class VehicleListController implements Initializable {
     @FXML
     private TableColumn<VehicleEntity, String> color;
     @FXML
+    private TableColumn<VehicleEntity, Integer> currentCustomerId;
+    @FXML
     private Label errorMessage;
 
     
 	private ObservableList<VehicleEntity> vehicleList;
 	
 	
+    @Override
     public void initialize(URL url, ResourceBundle rb) {
-    	currentCustomerId.setCellValueFactory(new PropertyValueFactory<VehicleEntity, Integer>("currentCustomerId"));
         year.setCellValueFactory(new PropertyValueFactory<VehicleEntity, Integer>("year"));
         make.setCellValueFactory(new PropertyValueFactory<VehicleEntity, String>("make"));
         model.setCellValueFactory(new PropertyValueFactory<VehicleEntity, String>("model"));
