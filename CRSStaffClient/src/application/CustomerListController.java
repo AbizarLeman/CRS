@@ -46,9 +46,7 @@ public class CustomerListController implements Initializable {
     
 	private ObservableList<CustomerEntity> customerList;
 	
-	
-    @Override
-    public void initialize(URL url, ResourceBundle rb) {
+	public void initialize(URL arg0, ResourceBundle arg1) {
         id.setCellValueFactory(new PropertyValueFactory<CustomerEntity, Integer>("id"));
         email.setCellValueFactory(new PropertyValueFactory<CustomerEntity, String>("email"));
         fullname.setCellValueFactory(new PropertyValueFactory<CustomerEntity, String>("fullname"));
