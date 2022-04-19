@@ -19,18 +19,18 @@ public class Vehicle extends UnicastRemoteObject implements VehicleInterface {
 	}
 	
 	public int createVehicle(VehicleEntity vehicleEntity) throws RemoteException {
-		String sql = "INSERT INTO vehicle (year, make, model, color, is_renting) "
+		String sql = "INSERT INTO vehicle (year, make, model, color, current_customer_id) "
     			+ "VALUES(?, ?, ?, ?, ?)";
 		
 		try {
         	Connection connection = dataSource.getConnection();
         	PreparedStatement statement = connection.prepareStatement(sql);
         	
-        	statement.setInt(1, vehicleEntity.year);
-        	statement.setString(2, vehicleEntity.make);
-        	statement.setString(3, vehicleEntity.model);
-        	statement.setString(4, vehicleEntity.color);
-        	statement.setBoolean(5, vehicleEntity.isRenting);
+        	statement.setInt(1, vehicleEntity.getYear());
+        	statement.setString(2, vehicleEntity.getMake());
+        	statement.setString(3, vehicleEntity.getModel());
+        	statement.setString(4, vehicleEntity.getColor());
+        	statement.setInt(5, vehicleEntity.getCurrentCustomerId());
         	
         	return statement.executeUpdate();
 		} catch (Exception e) {
@@ -52,12 +52,12 @@ public class Vehicle extends UnicastRemoteObject implements VehicleInterface {
         	
         	while (result.next()) {
         		VehicleEntity vehicleEntity = new VehicleEntity();
-        		vehicleEntity.id = result.getInt("id");
-        		vehicleEntity.make = result.getString("make");
-        		vehicleEntity.model = result.getString("model");
-        		vehicleEntity.color = result.getString("color");
-        		vehicleEntity.year  = result.getInt("year");
-        		vehicleEntity.isRenting = result.getBoolean("is_renting");
+        		vehicleEntity.setId(result.getInt("id"));
+        		vehicleEntity.setMake(result.getString("make"));
+        		vehicleEntity.setModel(result.getString("model"));
+        		vehicleEntity.setColor(result.getString("color"));
+        		vehicleEntity.setYear(result.getInt("year"));
+        		vehicleEntity.setCurrentCustomerId(result.getInt("current_customer_id"));
 	            resultList.add(vehicleEntity);
         	}
 	         
@@ -83,12 +83,12 @@ public class Vehicle extends UnicastRemoteObject implements VehicleInterface {
         	VehicleEntity vehicleEntity = new VehicleEntity();
         	
         	while (result.next()) {
-        		vehicleEntity.id = result.getInt("id");
-        		vehicleEntity.make = result.getString("make");
-        		vehicleEntity.model = result.getString("model");
-        		vehicleEntity.color = result.getString("color");
-        		vehicleEntity.year  = result.getInt("year");
-        		vehicleEntity.isRenting = result.getBoolean("is_renting");
+        		vehicleEntity.setId(result.getInt("id"));
+        		vehicleEntity.setMake(result.getString("make"));
+        		vehicleEntity.setModel(result.getString("model"));
+        		vehicleEntity.setColor(result.getString("color"));
+        		vehicleEntity.setYear(result.getInt("year"));
+        		vehicleEntity.setCurrentCustomerId(result.getInt("current_customer_id"));
         	}
         	
         	return vehicleEntity;
@@ -101,19 +101,19 @@ public class Vehicle extends UnicastRemoteObject implements VehicleInterface {
 	
 	public int updateVehicle(VehicleEntity vehicleEntity) throws RemoteException {
 		String sql = "UPDATE vehicle "
-				+ "SET make = ?, model = ?, color = ?, year = ?, is_renting = ? "
+				+ "SET make = ?, model = ?, color = ?, year = ?, current_customer_id = ? "
 				+ "WHERE id = ?";
 		
 		try {
         	Connection connection = dataSource.getConnection();
         	PreparedStatement statement = connection.prepareStatement(sql);
         	
-        	statement.setInt(1, vehicleEntity.year);
-        	statement.setString(2, vehicleEntity.make);
-        	statement.setString(3, vehicleEntity.model);
-        	statement.setString(4, vehicleEntity.color);
-        	statement.setBoolean(5, vehicleEntity.isRenting);
-        	statement.setInt(6, vehicleEntity.id);
+        	statement.setInt(1, vehicleEntity.getYear());
+        	statement.setString(2, vehicleEntity.getMake());
+        	statement.setString(3, vehicleEntity.getModel());
+        	statement.setString(4, vehicleEntity.getColor());
+        	statement.setInt(5, vehicleEntity.getCurrentCustomerId());
+        	statement.setInt(6, vehicleEntity.getId());
         	
         	return statement.executeUpdate();
 		} catch (Exception e) {
