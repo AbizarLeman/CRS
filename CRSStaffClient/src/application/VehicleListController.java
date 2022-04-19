@@ -37,9 +37,9 @@ public class VehicleListController implements Initializable {
     @FXML
     private TableColumn<VehicleEntity, String> model;
     @FXML
-    private TableColumn<VehicleEntity, Float> color;
+    private TableColumn<VehicleEntity, String> color;
     @FXML
-    private TableColumn<VehicleEntity, Boolean> isRenting;
+    private TableColumn<VehicleEntity, Integer> currentCustomerId;
     @FXML
     private Label errorMessage;
 
@@ -53,7 +53,7 @@ public class VehicleListController implements Initializable {
         make.setCellValueFactory(new PropertyValueFactory<VehicleEntity, String>("make"));
         model.setCellValueFactory(new PropertyValueFactory<VehicleEntity, String>("model"));
         color.setCellValueFactory(new PropertyValueFactory<VehicleEntity, String>("color"));
-        isRenting.setCellValueFactory(new PropertyValueFactory<VehicleEntity, Boolean>("isRenting"));
+ 
         
 		//CustomerEntity customerEntity1 = new CustomerEntity();
 		//CustomerEntity customerEntity2 = new CustomerEntity();

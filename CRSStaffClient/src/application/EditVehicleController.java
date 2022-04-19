@@ -45,7 +45,7 @@ public class EditVehicleController {
         	VehicleInterface vehicle = (VehicleInterface) registry.lookup("vehicle");
         	System.out.println("Connected to RMI server");
         	
-        	vehicleEntity.setYear(year.getText(Integer.valueOf(setYear));
+        	vehicleEntity.setYear(Integer.parseInt(year.getText()));
         	vehicleEntity.setMake(make.getText());
         	vehicleEntity.setModel(model.getText());
         	vehicleEntity.setColor(color.getText());
