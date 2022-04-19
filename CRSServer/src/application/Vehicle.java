@@ -35,7 +35,6 @@ public class Vehicle extends UnicastRemoteObject implements VehicleInterface {
         	return statement.executeUpdate();
 		} catch (Exception e) {
             e.printStackTrace();
-            System.exit(0);
 			return 0;
 		}
 	}
@@ -67,7 +66,6 @@ public class Vehicle extends UnicastRemoteObject implements VehicleInterface {
         	return resultList;
         } catch (Exception e) {
             e.printStackTrace();
-            System.exit(0);
     		return null;
         }
     }
@@ -94,7 +92,6 @@ public class Vehicle extends UnicastRemoteObject implements VehicleInterface {
         	return vehicleEntity;
 		} catch (Exception e) {
             e.printStackTrace();
-            System.exit(0);
     		return null;
 		}	
 	}
@@ -118,7 +115,6 @@ public class Vehicle extends UnicastRemoteObject implements VehicleInterface {
         	return statement.executeUpdate();
 		} catch (Exception e) {
             e.printStackTrace();
-            System.exit(0);
     		return 0;
 		}	
 	}
@@ -135,7 +131,6 @@ public class Vehicle extends UnicastRemoteObject implements VehicleInterface {
         	return statement.executeUpdate();
 		} catch (Exception e) {
             e.printStackTrace();
-            System.exit(0);
     		return 0;
 		}	
 	}

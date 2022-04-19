@@ -49,7 +49,7 @@ public class VehicleListController implements Initializable {
 	
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        year.setCellValueFactory(new PropertyValueFactory<VehicleEntity, Integer>("id"));
+        year.setCellValueFactory(new PropertyValueFactory<VehicleEntity, Integer>("year"));
         make.setCellValueFactory(new PropertyValueFactory<VehicleEntity, String>("make"));
         model.setCellValueFactory(new PropertyValueFactory<VehicleEntity, String>("model"));
         color.setCellValueFactory(new PropertyValueFactory<VehicleEntity, String>("color"));
@@ -131,6 +131,6 @@ public class VehicleListController implements Initializable {
     
     @FXML protected void handleBackButtonAction(ActionEvent event) throws IOException {
     	Main main = new Main();
-    	main.changeScene("VehicleList.fxml");
+    	main.changeScene("Vehicle.fxml");
     }
 }
