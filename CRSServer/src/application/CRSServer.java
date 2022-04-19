@@ -18,6 +18,14 @@ public class CRSServer extends UnicastRemoteObject {
     	
 		return customerList;
 	}
+	
+	public List<VehicleEntity> getVehicles() throws RemoteException {
+    	Vehicle vehicle = new Vehicle();
+    	List<VehicleEntity> vehicleList = vehicle.getVehicles();
+    	
+		return vehicleList;
+	}
+	
 
 	public static void main(String[] args) {
 		try {        	
