@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	
+<?import javafx.scene.layout.VBox?>
+<?import java.net.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.cell.*?>
+<?import javafx.collections.*?> 
+<?import java.lang.*?>
+<?import javafx.scene.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.RentalListController">
+	<padding><Insets top="25" right="25" bottom="25" left="25"/></padding>
+    <Text text="Vehicle List" GridPane.columnIndex="0" GridPane.rowIndex="0" GridPane.columnSpan="2"/>
+    <TableView fx:id="rentalTable" prefHeight="300.0" prefWidth="300.0" >
+		<columns>
+            <TableColumn fx:id="id" prefWidth="80.0" text="ID" />
+            <TableColumn fx:id="customerId" prefWidth="80.0" text="Customer ID" />
+            <TableColumn fx:id="vehicleId" prefWidth="80.0" text="Vehicle ID" />
+            <TableColumn fx:id="startDate" prefWidth="80.0" text="Start Date" />
+			<TableColumn fx:id="endDate" prefWidth="80.0" text="End Date" />
+            <TableColumn fx:id="status" prefWidth="80.0" text="Status" />
+		</columns>
+	</TableView>
+	<Label fx:id="errorMessage" textFill="RED" />
+	<HBox spacing="10" >
+		<Button text="Approve Rent Request" onAction="#handleRentApprovalButtonAction" />
+		<Button text="Issue Bill" onAction="#handleIssueBillButtonAction" />
+	</HBox>
+	<VBox spacing="10" alignment="bottom_right" GridPane.columnIndex="1" GridPane.rowIndex="4">
+		<Button text="Back" onAction="#handleBackButtonAction" />
+	</VBox>
+</VBox>

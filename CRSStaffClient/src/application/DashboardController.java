@@ -10,12 +10,23 @@ public class DashboardController {
     	main.changeScene("Customer.fxml");
     }
     
-    @FXML protected void handleLogoutButtonAction(ActionEvent event) throws IOException {
-    	Main main = new Main();
-    	main.changeScene("StaffClient.fxml");
-    }
     @FXML protected void handleVehicleButtonAction(ActionEvent event) throws IOException {
     	Main main = new Main();
     	main.changeScene("Vehicle.fxml");
+    }
+    
+    @FXML protected void handleRentalButtonAction(ActionEvent event) throws IOException {
+    	Main main = new Main();
+    	main.changeScene("RentalList.fxml");
+    }
+    
+    @FXML protected void handleBillingHistoryButtonAction(ActionEvent event) throws IOException {
+    	Main main = new Main();
+    	main.changeScene("BillList.fxml");
+    }
+    
+    @FXML protected void handleLogoutButtonAction(ActionEvent event) throws IOException {
+    	Main main = new Main();
+    	main.changeScene("StaffClient.fxml");
     }
 }
