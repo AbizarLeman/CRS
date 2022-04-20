@@ -13,7 +13,7 @@
 
 <VBox xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.RentalListController">
 	<padding><Insets top="25" right="25" bottom="25" left="25"/></padding>
-    <Text text="Vehicle List" GridPane.columnIndex="0" GridPane.rowIndex="0" GridPane.columnSpan="2"/>
+    <Text text="Rental List" GridPane.columnIndex="0" GridPane.rowIndex="0" GridPane.columnSpan="2"/>
     <TableView fx:id="rentalTable" prefHeight="300.0" prefWidth="300.0" >
 		<columns>
             <TableColumn fx:id="id" prefWidth="80.0" text="ID" />

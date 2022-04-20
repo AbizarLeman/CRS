@@ -53,20 +53,7 @@ public class VehicleListController implements Initializable {
         make.setCellValueFactory(new PropertyValueFactory<VehicleEntity, String>("make"));
         model.setCellValueFactory(new PropertyValueFactory<VehicleEntity, String>("model"));
         color.setCellValueFactory(new PropertyValueFactory<VehicleEntity, String>("color"));
- 
-        
-		//CustomerEntity customerEntity1 = new CustomerEntity();
-		//CustomerEntity customerEntity2 = new CustomerEntity();
-    	//customerEntity1.setId(1);
-    	//customerEntity1.setEmail("testing1@testing.com");
-    	//customerEntity1.setFullname("Test Account1");
-    	//customerEntity1.setBalance((float) 0.0);
-    	//customerEntity1.setIsRenting(false);
-    	//customerEntity2.setId(2);
-    	//customerEntity2.setEmail("testing2@testing.com");
-    	//customerEntity2.setFullname("Test Account2");
-    	//customerEntity2.setBalance((float) 0.0);
-    	//customerEntity2.setIsRenting(false);
+        currentCustomerId.setCellValueFactory(new PropertyValueFactory<VehicleEntity, Integer>("currentCustomerId"));
     	
         try {
         	Registry registry = LocateRegistry.getRegistry("127.0.0.1", 1234);
@@ -79,7 +66,6 @@ public class VehicleListController implements Initializable {
         	    vehicleList.add(vehicleEntity);
         	}
         	
-        	//customerList = FXCollections.observableArrayList(customerEntity1, customerEntity2);
         	vehicleTable.setItems(vehicleList);
         } catch(Exception e) {
             System.out.printf(e.toString());

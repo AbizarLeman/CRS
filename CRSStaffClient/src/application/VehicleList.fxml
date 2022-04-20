@@ -20,7 +20,7 @@
 			<TableColumn fx:id="make" prefWidth="103.0" text="Make" />
             <TableColumn fx:id="model" prefWidth="75.0" text="Model" />
             <TableColumn fx:id="color" prefWidth="144.0" text="Color" />
-            <TableColumn fx:id="currentCustomerId" prefWidth="109.0" text="Current Customer Id" />
+            <TableColumn fx:id="currentCustomerId" prefWidth="109.0" text="Current Customer ID" />
 		</columns>
 	</TableView>
 	<Label fx:id="errorMessage" textFill="RED" />
