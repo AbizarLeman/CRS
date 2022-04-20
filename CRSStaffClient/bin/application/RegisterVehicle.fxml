@@ -8,7 +8,7 @@
 <?import javafx.scene.text.*?>
 
 
-<VBox xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.RegisterVehicleController">
+<VBox xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.RentalController">
 	<padding><Insets top="25" right="25" bottom="25" left="25"/></padding>
 	
     <Text text="Register a vehicle" GridPane.columnIndex="0" GridPane.rowIndex="0" GridPane.columnSpan="2"/>
