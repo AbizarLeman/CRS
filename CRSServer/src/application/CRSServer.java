@@ -36,8 +36,6 @@ public class CRSServer extends UnicastRemoteObject {
         	registry.rebind("bill", new Bill());
         	registry.rebind("payment", new Payment());
         	
-        	//CustomerInterface customerInterface = (CustomerInterface) UnicastRemoteObject.exportObject(customer, 0);
-        	
         	System.out.println("Server started");
         } catch ( Exception e ) {
             e.printStackTrace();

@@ -1,5 +1,3 @@
---sqlite3 test.db  
-
 BEGIN TRANSACTION;
 CREATE TABLE customer ( id INTEGER PRIMARY KEY, email TEXT, password TEXT, fullname TEXT, balance REAL, is_renting INTEGER);
 CREATE TABLE staff ( id INTEGER PRIMARY KEY, email TEXT, password TEXT, fullname TEXT);
