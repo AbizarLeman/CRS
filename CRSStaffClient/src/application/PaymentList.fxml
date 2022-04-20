@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	
+<?import javafx.scene.layout.VBox?>
+<?import java.net.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.cell.*?>
+<?import javafx.collections.*?> 
+<?import java.lang.*?>
+<?import javafx.scene.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.PaymentListController">
+	<padding><Insets top="25" right="25" bottom="25" left="25"/></padding>
+    <Text text="Payment List" GridPane.columnIndex="0" GridPane.rowIndex="0" GridPane.columnSpan="2"/>
+    <TableView fx:id="paymentTable" prefHeight="300.0" prefWidth="300.0" >
+		<columns>
+            <TableColumn fx:id="id" prefWidth="80.0" text="ID" />
+            <TableColumn fx:id="billId" prefWidth="80.0" text="Bill ID" />
+			<TableColumn fx:id="paymentDate" prefWidth="80.0" text="Payment Date" />
+            <TableColumn fx:id="amount" prefWidth="80.0" text="Amount" />
+		</columns>
+	</TableView>
+	<Label fx:id="errorMessage" textFill="RED" />
+	<HBox spacing="10" >
+		<Button text="Mark as Paid" onAction="#handleMarkAsPaidButtonAction" />
+	</HBox>
+	<VBox spacing="10" alignment="bottom_right" GridPane.columnIndex="1" GridPane.rowIndex="4">
+		<Button text="Back" onAction="#handleBackButtonAction" />
+	</VBox>
+</VBox>
