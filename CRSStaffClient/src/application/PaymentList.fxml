@@ -13,11 +13,11 @@
 
 <VBox xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.PaymentListController">
 	<padding><Insets top="25" right="25" bottom="25" left="25"/></padding>
-    <Text text="Payments" GridPane.columnIndex="0" GridPane.rowIndex="0" GridPane.columnSpan="2"/>
+    <Text text="Payment List" GridPane.columnIndex="0" GridPane.rowIndex="0" GridPane.columnSpan="2"/>
     <TableView fx:id="paymentTable" prefHeight="300.0" prefWidth="300.0" >
 		<columns>
             <TableColumn fx:id="id" prefWidth="80.0" text="ID" />
-            <TableColumn fx:id="billId" prefWidth="80.0" text="Customer ID" />
+            <TableColumn fx:id="billId" prefWidth="80.0" text="Bill ID" />
 			<TableColumn fx:id="paymentDate" prefWidth="80.0" text="Payment Date" />
             <TableColumn fx:id="amount" prefWidth="80.0" text="Amount" />
 		</columns>

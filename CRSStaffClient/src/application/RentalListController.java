@@ -85,12 +85,17 @@ public class RentalListController implements Initializable {
             	Registry registry = LocateRegistry.getRegistry("127.0.0.1", 1234);
             	RentalInterface rental = (RentalInterface) registry.lookup("rental");
             	System.out.println("Connected to RMI server");
+            	CustomerInterface customer = (CustomerInterface) registry.lookup("customer");
+            	System.out.println("Connected to RMI server");
             	
+            	CustomerEntity customerEntity = customer.getCustomer(selectedRental.getCustomerId());
+            	customerEntity.setIsRenting(true);
             	selectedRental.setStatus("In Rent");
 
-            	int updateResult = rental.updateRental(selectedRental);
+            	int updateCustomerResult = customer.updateCustomer(customerEntity);
+            	int updateRentalResult = rental.updateRental(selectedRental);
             	
-            	if (updateResult == 0) {
+            	if (updateCustomerResult == 0 || updateRentalResult == 0) {
             		errorMessage.setText("Failed to update!");
             	} else {
                 	main.changeScene("RentalList.fxml"); 

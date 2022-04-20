@@ -76,6 +76,37 @@ public class BillListController implements Initializable {
     }
     
     @FXML protected void handleTerminateRentButtonAction(ActionEvent event) throws IOException {
+    	Main main = new Main();
+    	BillEntity selectedBill = (BillEntity) billTable.getSelectionModel().getSelectedItem();
+    	
+    	if (selectedBill == null) {
+    		errorMessage.setText("Please select a bill.");
+    	} else {
+            try {
+            	Registry registry = LocateRegistry.getRegistry("127.0.0.1", 1234);
+            	RentalInterface rental = (RentalInterface) registry.lookup("rental");
+            	System.out.println("Connected to RMI server");
+            	CustomerInterface customer = (CustomerInterface) registry.lookup("customer");
+            	System.out.println("Connected to RMI server");
+            	
+            	RentalEntity rentalEntity = rental.getRental(selectedBill.getCustomerId());
+            	CustomerEntity customerEntity = customer.getCustomer(selectedBill.getCustomerId());
+            	rentalEntity.setStatus("Unpaid");
+            	customerEntity.setIsRenting(false);
+
+            	int updateRentalResult = rental.updateRental(rentalEntity);
+            	int updateCustomerResult = customer.updateCustomer(customerEntity);
+            	
+            	if (updateRentalResult == 0 || updateCustomerResult == 0) {
+            		errorMessage.setText("Failed to update!");
+            	} else {
+                	main.changeScene("BillList.fxml"); 
+            	}
+            } catch(Exception e) {
+                System.out.printf(e.toString());
+            	main.changeScene("BillList.fxml"); 
+            }
+    	} 
     }
 
     @FXML protected void handleBackButtonAction(ActionEvent event) throws IOException {

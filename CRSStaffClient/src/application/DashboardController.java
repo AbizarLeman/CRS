@@ -25,6 +25,11 @@ public class DashboardController {
     	main.changeScene("BillList.fxml");
     }
     
+    @FXML protected void handlePaymentListButtonAction(ActionEvent event) throws IOException {
+    	Main main = new Main();
+    	main.changeScene("PaymentList.fxml");
+    }
+    
     @FXML protected void handleLogoutButtonAction(ActionEvent event) throws IOException {
     	Main main = new Main();
     	main.changeScene("StaffClient.fxml");

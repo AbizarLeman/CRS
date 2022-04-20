@@ -15,7 +15,7 @@
 		<Button text="Vehicle" onAction="#handleVehicleButtonAction" />
 		<Button text="Rental List" onAction="#handleRentalButtonAction" />
 		<Button text="Billing History" onAction="#handleBillingHistoryButtonAction" />
-		<Button text="Payment" />
+		<Button text="Payment List" onAction="#handlePaymentListButtonAction" />
 		<Button text="Logout" onAction="#handleLogoutButtonAction"/>
 	</VBox>
 </VBox>

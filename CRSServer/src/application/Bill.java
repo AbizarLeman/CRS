@@ -85,10 +85,10 @@ public class Bill extends UnicastRemoteObject implements BillInterface {
         	
         	while (result.next()) {
         		billEntity.setId(result.getInt("id"));
-        		billEntity.setRentalId(result.getInt("rentalId"));
-        		billEntity.setCustomerId(result.getInt("customerId"));
-        		billEntity.setIssuedOn(result.getString("issuedOn"));
-        		billEntity.setDueDate(result.getString("dueDate"));
+        		billEntity.setRentalId(result.getInt("rental_id"));
+        		billEntity.setCustomerId(result.getInt("customer_id"));
+        		billEntity.setIssuedOn(result.getString("issued_on"));
+        		billEntity.setDueDate(result.getString("due_date"));
         		billEntity.setAmount(result.getFloat("amount"));
         		billEntity.setStatus(result.getString("status"));
         	}
