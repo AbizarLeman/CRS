@@ -23,6 +23,13 @@
             <TableColumn fx:id="currentCustomerId" prefWidth="109.0" text="Current Customer Id" />
 		</columns>
 	</TableView>
+	
+	<Label text="Start Date:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+    <DatePicker fx:id="startDate" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+    
+    <Label text="End Date:" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+    <DatePicker fx:id="endDate" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+    
 	<Label fx:id="errorMessage" textFill="RED" />
 	<HBox spacing="10" >
 		<Button text="Rent" onAction="#handleRentButtonAction" />

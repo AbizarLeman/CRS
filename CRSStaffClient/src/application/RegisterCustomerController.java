@@ -5,9 +5,11 @@ import java.rmi.registry.Registry;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.control.Alert.AlertType;
 
 public class RegisterCustomerController {
     @FXML
@@ -36,7 +38,17 @@ public class RegisterCustomerController {
         	
         	if (createResult == 0) {
         		errorMessage.setText("Registration failed!");
+        		
+        		Alert alert = new Alert(AlertType.INFORMATION);
+        		alert.setTitle("Failure");
+        		alert.setHeaderText(null);
+        		alert.setContentText("Registration failed!");
         	} else {
+        		Alert alert = new Alert(AlertType.INFORMATION);
+        		alert.setTitle("Success");
+        		alert.setHeaderText(null);
+        		alert.setContentText("Registration successfull!");
+        		
             	Main main = new Main();
             	main.changeScene("CustomerList.fxml"); 
         	}

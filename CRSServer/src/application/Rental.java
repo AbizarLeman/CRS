@@ -19,7 +19,7 @@ public class Rental extends UnicastRemoteObject implements RentalInterface {
 	}
 	
 	public int createRental(RentalEntity rentalEntity) throws RemoteException {
-		String sql = "INSERT INTO vehicle (customer_id, vehicle_id, start_date, end_date, status) "
+		String sql = "INSERT INTO rental (customer_id, vehicle_id, start_date, end_date, status) "
     			+ "VALUES(?, ?, ?, ?, ?)";
 		
 		try {

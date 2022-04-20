@@ -18,6 +18,39 @@ public class Customer extends UnicastRemoteObject implements CustomerInterface {
 		dataSource.setUrl("jdbc:sqlite:crs.db");
 	}
 	
+	public CustomerEntity authenticateCustomer(String email, String password) throws RemoteException {
+		String sql = "SELECT * FROM customer WHERE (email = ? AND password = ?)";
+		
+		try {
+        	Connection connection = dataSource.getConnection();
+        	PreparedStatement statement = connection.prepareStatement(sql);
+        	statement.setString(1, email);
+        	statement.setString(2, password);
+        	 
+        	ResultSet result = statement.executeQuery();
+        	CustomerEntity customerEntity = new CustomerEntity();
+        	
+        	
+        	while (result.next()) {
+        		customerEntity.setId(result.getInt("id"));
+        		customerEntity.setEmail(result.getString("email"));
+        		customerEntity.setPassword(result.getString("password"));
+        		customerEntity.setFullname(result.getString("fullname"));
+        		customerEntity.setBalance(result.getFloat("balance"));
+        		customerEntity.setIsRenting(result.getBoolean("is_renting"));
+        	}
+        	
+        	if (customerEntity.getId() == 0) {
+        		return null;
+        	} else {
+            	return customerEntity;
+        	}
+		} catch (Exception e) {
+            e.printStackTrace();
+    		return null;
+		}	
+	}
+	
 	public int createCustomer(CustomerEntity customerEntity) throws RemoteException {
 		String sql = "INSERT INTO customer (email, password, fullname, balance, is_renting) "
     			+ "VALUES(?, ?, ?, ?, ?)";

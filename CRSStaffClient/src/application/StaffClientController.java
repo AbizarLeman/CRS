@@ -26,13 +26,7 @@ public class StaffClientController {
     	Main main = new Main();
     	
         try {
-            
-        	//Registry registry = LocateRegistry.getRegistry("127.0.0.1", 1234);
-        	//CustomerInterface customer = (CustomerInterface) registry.lookup("customer");
-        	//System.out.println("Connected to RMI server");
-        	//List<CustomerEntity> resultList = customer.getCustomers();
-        	
-            if(loginID.getText().toString().equals("testing") && password.getText().toString().equals("123")) {
+            if(loginID.getText().toString().equals("staff") && password.getText().toString().equals("123")) {
             	errorMessage.setText("Success!");
 
             	main.changeScene("Dashboard.fxml");

@@ -12,8 +12,8 @@
     <Text text="Dashboard" GridPane.columnIndex="0" GridPane.rowIndex="0" GridPane.columnSpan="2"/>
 	<VBox spacing="10" alignment="bottom_right" GridPane.columnIndex="1" GridPane.rowIndex="4">
 		<Button text="Vehicle List" onAction= "#handleVehicleListButtonAction" />
-		<Button text="Rent Status" onAction="#handleRentButtonAction" />
-		<Button text="Vehicles on Rental" />
+		<Button text="Rent Status" />
+		<Button text="Vehicles Rented" onAction="#handleVehicleRentedButtonAction" />
 		<Button text="Logout" onAction="#handleLogoutButtonAction"/>
 	</VBox>
 </VBox>

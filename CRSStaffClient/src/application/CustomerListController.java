@@ -17,10 +17,12 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.SelectionModel;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 import application.CustomerEntity;
@@ -54,19 +56,6 @@ public class CustomerListController implements Initializable {
         fullname.setCellValueFactory(new PropertyValueFactory<CustomerEntity, String>("fullname"));
         balance.setCellValueFactory(new PropertyValueFactory<CustomerEntity, Float>("balance"));
         isRenting.setCellValueFactory(new PropertyValueFactory<CustomerEntity, Boolean>("isRenting"));
-        
-		//CustomerEntity customerEntity1 = new CustomerEntity();
-		//CustomerEntity customerEntity2 = new CustomerEntity();
-    	//customerEntity1.setId(1);
-    	//customerEntity1.setEmail("testing1@testing.com");
-    	//customerEntity1.setFullname("Test Account1");
-    	//customerEntity1.setBalance((float) 0.0);
-    	//customerEntity1.setIsRenting(false);
-    	//customerEntity2.setId(2);
-    	//customerEntity2.setEmail("testing2@testing.com");
-    	//customerEntity2.setFullname("Test Account2");
-    	//customerEntity2.setBalance((float) 0.0);
-    	//customerEntity2.setIsRenting(false);
     	
         try {
         	Registry registry = LocateRegistry.getRegistry("127.0.0.1", 1234);
@@ -78,8 +67,7 @@ public class CustomerListController implements Initializable {
         	for (CustomerEntity customerEntity : resultList) {
         	    customerList.add(customerEntity);
         	}
-        	
-        	//customerList = FXCollections.observableArrayList(customerEntity1, customerEntity2);
+
         	customerTable.setItems(customerList);
         } catch(Exception e) {
             System.out.printf(e.toString());
@@ -119,7 +107,17 @@ public class CustomerListController implements Initializable {
             	
             	if (deleteResult == 0) {
             		errorMessage.setText("Failed to delete!");
+            		
+            		Alert alert = new Alert(AlertType.INFORMATION);
+            		alert.setTitle("Failure");
+            		alert.setHeaderText(null);
+            		alert.setContentText("Failed to delete!");
             	} else {
+            		Alert alert = new Alert(AlertType.INFORMATION);
+            		alert.setTitle("Success");
+            		alert.setHeaderText(null);
+            		alert.setContentText("Delete attempt is successful!");
+            		
                 	main.changeScene("CustomerList.fxml"); 
             	}
             } catch(Exception e) {

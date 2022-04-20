@@ -9,6 +9,8 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TableView;
@@ -50,7 +52,20 @@ public class EditCustomerController {
         	
         	if (updateResult == 0) {
         		errorMessage.setText("Failed to update!");
+        		
+        		Alert alert = new Alert(AlertType.INFORMATION);
+        		alert.setTitle("Failure");
+        		alert.setHeaderText(null);
+        		alert.setContentText("Failed to update!");
+
+        		alert.showAndWait();
         	} else {
+        		Alert alert = new Alert(AlertType.INFORMATION);
+        		alert.setTitle("Success");
+        		alert.setHeaderText(null);
+        		alert.setContentText("The update attempt is successful!");
+
+        		alert.showAndWait();
             	Main main = new Main();
             	main.changeScene("CustomerList.fxml"); 
         	}

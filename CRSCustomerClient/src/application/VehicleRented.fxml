@@ -11,9 +11,9 @@
 <?import java.lang.*?>
 <?import javafx.scene.*?>
 
-<VBox xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.VehicleListController">
+<VBox xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.VehicleRentedController">
 	<padding><Insets top="25" right="25" bottom="25" left="25"/></padding>
-    <Text text="Vehicle List" GridPane.columnIndex="0" GridPane.rowIndex="0" GridPane.columnSpan="2"/>
+    <Text text="Vehicle Rented" GridPane.columnIndex="0" GridPane.rowIndex="0" GridPane.columnSpan="2"/>
     <TableView fx:id="vehicleTable" prefHeight="300.0" prefWidth="300.0" >
 		<columns>
 			<TableColumn fx:id="year" prefWidth="86.0" text="Year" />
@@ -23,17 +23,8 @@
             <TableColumn fx:id="currentCustomerId" prefWidth="109.0" text="Current Customer Id" />
 		</columns>
 	</TableView>
-	
-	<Label text="Start Date:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
-    <DatePicker fx:id="startDate" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
-    
-    <Label text="End Date:" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
-    <DatePicker fx:id="endDate" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
     
 	<Label fx:id="errorMessage" textFill="RED" />
-	<HBox spacing="10" >
-		<Button text="Rent" onAction="#handleRentButtonAction" />
-	</HBox>
 	<VBox spacing="10" alignment="bottom_right" GridPane.columnIndex="1" GridPane.rowIndex="4">
 		<Button text="Back" onAction="#handleBackButtonAction" />
 	</VBox>
